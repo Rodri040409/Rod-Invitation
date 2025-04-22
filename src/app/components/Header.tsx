@@ -47,17 +47,18 @@ export default function Header() {
       <div className=" grid place-items-center relative w-full max-w-[600px] aspect-[300/350] sm:aspect-[800/350] [perspective:1000px] translate-x-[1.5rem]">
         {/* Carta */}
         <motion.div
-        className="absolute left-[1.5%] w-[89%] sm:w-[580px] h-[20rem] sm:h-[300px] bg-white text-black p-4 sm:p-6 rounded top-[13rem] sm:top-[30px] z-[300] overflow-y-auto scroll-smooth shadow-inner"
-        animate={abierto ? {
-          y: [-10, -340, 0],
-          zIndex: 500
-        } : { y: 0, zIndex: 300 }}
-        transition={{
-          y: { delay: 0.7, duration: 2, ease: 'easeInOut', times: [0, 0.5, 1] },
-          zIndex: { delay: 1.5 }
-        }}
-      >
-
+          className="absolute left-[1.5%] w-[89%] sm:w-[580px] h-[20rem] sm:h-[300px] bg-white text-black p-4 sm:p-6 rounded top-[13rem] sm:top-[30px] z-[300] overflow-y-auto scroll-smooth shadow-inner scrollbar-thumb-[#ccc] scrollbar-track-[#f5f5f5]"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+          animate={abierto ? {
+            y: [-10, -340, 0],
+            zIndex: 500
+          } : { y: 0, zIndex: 300 }}
+          transition={{
+            y: { delay: 0.7, duration: 2, ease: 'easeInOut', times: [0, 0.5, 1] },
+            zIndex: { delay: 1.5 }
+          }}
+        >
+        <div className="h-full overflow-y-auto p-4 sm:p-6 scroll-smooth scrollbar-thumb-[#ccc] scrollbar-track-[#f5f5f5] scrollbar-thin">
           <h1 className="text-[3rem] font-bold text-center leading-none mb-[2rem] fuente_italica mt-[1rem] sm:mt-[2rem]">¡Estás invitado a mi cumpleaños! 🎉</h1>
           <p className="text-[1.5rem] text-center leading-tight mb-[1rem] fuente_awesome">
             Te espero este <strong>jueves 24 de abril</strong> a las <strong>11:30 AM</strong> para celebrar juntos con una taquiza deliciosa. 🌮
@@ -81,6 +82,8 @@ export default function Header() {
               Ver ubicación
             </a>
           </div>
+        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-black/40 to-transparent" />
         </motion.div>
 
         {/* Lado izquierdo */}

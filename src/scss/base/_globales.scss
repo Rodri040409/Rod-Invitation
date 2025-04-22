@@ -8,6 +8,9 @@ html {
 *, *:before, *:after {
     box-sizing: inherit; /* Ajusta el html para que la suma del padding entre otras cosas, no afecte el tamaño original */
 }
+* {
+    -webkit-tap-highlight-color: transparent;
+}  
 body {
     font-size: 1.6rem;
     font-family: v.$fuente_principal;
