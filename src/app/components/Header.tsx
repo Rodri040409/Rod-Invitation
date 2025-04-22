@@ -16,7 +16,7 @@ export default function Header() {
   }, [abierto]);
 
   return (
-    <header className="grid place-items-center min-h-screen bg-gradient-to-b from-[#0b0f1e] to-[#1a1f2e] px-4 text-white">
+    <header className="grid place-items-center min-h-screen bg-gradient-to-b from-[#0b0f1e] to-[#1a1f2e] px-4 text-white overflow-hidden">
       <div className=" grid place-items-center relative w-full max-w-[600px] aspect-[300/350] sm:aspect-[800/350] [perspective:1000px] translate-x-[1.5rem]">
         {/* Carta */}
         <motion.div
