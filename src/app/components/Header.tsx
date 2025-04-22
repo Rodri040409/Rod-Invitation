@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 export default function Header() {
   const [abierto, setAbierto] = useState(false);
   const [solapaZIndex, setSolapaZIndex] = useState(600);
+  const [tiempoRestante, setTiempoRestante] = useState('');
 
   useEffect(() => {
     if (abierto) {
@@ -14,6 +15,32 @@ export default function Header() {
       }, 800);
     }
   }, [abierto]);
+
+  useEffect(() => {
+    const evento = new Date('2025-04-24T11:30:00');
+
+    const actualizarCuentaRegresiva = () => {
+      const ahora = new Date();
+      const diferencia = evento.getTime() - ahora.getTime();
+
+      if (diferencia <= 0) {
+        setTiempoRestante('¡Ya comenzó! 🎉');
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferencia / 1000) % 60);
+
+      setTiempoRestante(`${dias}d ${horas}h ${minutos}m ${segundos}s`);
+    };
+
+    const interval = setInterval(actualizarCuentaRegresiva, 1000);
+    actualizarCuentaRegresiva();
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <header className="grid place-items-center min-h-screen bg-gradient-to-b from-[#0b0f1e] to-[#1a1f2e] px-4 text-white overflow-hidden">
@@ -30,9 +57,29 @@ export default function Header() {
             zIndex: { delay: 1.5 }
           }}
         >
-          <p className="text-sm leading-relaxed text-center">
-            ¡Gracias por abrirme! 💌
+          <h1 className="text-xl sm:text-2xl font-bold text-center">¡Estás invitado a mi cumpleaños! 🎉</h1>
+          <p className="text-sm sm:text-base text-center leading-relaxed">
+            Te espero este <strong>jueves 24 de abril</strong> a las <strong>11:30 AM</strong> para celebrar juntos con una taquiza deliciosa. 🌮
           </p>
+          <p className="text-sm sm:text-base text-center leading-relaxed">
+            ¡Habrá <strong>alberca</strong>, por si gustas traer traje de baño! 🏊‍♂️
+          </p>
+          <p className="text-sm sm:text-base text-center leading-relaxed">
+            La fiesta será en el salón hazmín, con comida rica, música y buena compañía.
+          </p>
+          <p className="text-sm sm:text-base text-center leading-relaxed font-medium">
+            Cuenta regresiva: <span className="text-[#081D3D] font-bold">{tiempoRestante}</span>
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="https://www.google.com.mx/maps/place/19%C2%B027'25.6%22N+96%C2%B057'13.2%22W/@19.45711,-96.95367,16z/data=!4m4!3m3!8m2!3d19.4571111!4d-96.9536667?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" // Reemplazar con enlace correcto
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 px-5 py-2 bg-[#081D3D] text-white rounded-lg border border-[#081D3D] hover:bg-white hover:text-[#081D3D] transition text-sm sm:text-base"
+            >
+              Ver ubicación
+            </a>
+          </div>
         </motion.div>
 
         {/* Lado izquierdo */}
