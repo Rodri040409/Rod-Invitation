@@ -43,8 +43,8 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="grid place-items-center min-h-screen bg-gradient-to-b from-[#0b0f1e] to-[#1a1f2e] px-4 text-white overflow-hidden">
-      <div className=" grid place-items-center relative w-full max-w-[600px] aspect-[300/350] sm:aspect-[800/350] [perspective:1000px] translate-x-[1.5rem]">
+    <header className="fixed inset-0 grid place-items-center px-4 text-white overflow-hidden z-0">
+      <div className="grid place-items-center relative w-full max-w-[600px] aspect-[400/350] sm:aspect-[800/350] [perspective:1000px] translate-x-[1.5rem] z-10">
         {/* Carta */}
         <motion.div
           className="absolute left-[1.5%] w-[89%] sm:w-[580px] h-[20rem] sm:h-[300px] bg-white text-black p-4 sm:p-6 rounded top-[13rem] sm:top-[30px] z-[300] overflow-y-auto scroll-smooth shadow-inner scrollbar-thumb-[#ccc] scrollbar-track-[#f5f5f5]"
@@ -59,7 +59,7 @@ export default function Header() {
           }}
         >
         <div className="h-full overflow-y-auto p-4 sm:p-6 scroll-smooth scrollbar-thumb-[#ccc] scrollbar-track-[#f5f5f5] scrollbar-thin">
-          <h1 className="text-[3rem] font-bold text-center leading-none mb-[2rem] fuente_italica mt-[1rem] sm:mt-[2rem]">¡Estás invitado a mi cumpleaños! 🎉</h1>
+          <h1 className="text-[3rem] font-bold text-center leading-none mb-[2rem] fuente_italica mt-[1rem] sm:mt-[1rem]">¡Estás invitado a mi cumpleaños! 🎉</h1>
           <p className="text-[1.5rem] text-center leading-tight mb-[1rem] fuente_awesome">
             Te espero este <strong>jueves 24 de abril</strong> a las <strong>11:30 AM</strong> para celebrar juntos con una taquiza deliciosa. 🌮
           </p>
@@ -69,7 +69,7 @@ export default function Header() {
           <p className="text-[1.5rem] text-center leading-relaxed fuente_awesome">
             La fiesta será en el salón hazmín, con comida rica, música y buena compañía.
           </p>
-          <p className="text-[2rem] text-center leading-relaxed font-medium fuente_italica">
+          <p className="text-[1.85rem] text-center leading-relaxed font-medium fuente_italica">
             Cuenta regresiva: <span className="text-[#081D3D] font-bold f">{tiempoRestante}</span>
           </p>
           <div className="flex justify-center">

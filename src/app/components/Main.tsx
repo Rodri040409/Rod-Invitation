@@ -1,8 +1,9 @@
 export default function Main() {
   return (
-    <main className="p-8">
-      <h2 className="text-lg font-semibold">Bienvenido</h2>
-      <p>Este es el contenido principal de la página.</p>
+    <main className="w-[100%] h-screen -z-[1] ">
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
     </main>
   );
 }
