@@ -1,3 +1,14 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.fuente_italica {
+  font-family: v.$fuente_PlayFair-Italica;
+}
+
+.fuente_awesome {
+  font-family: v.$fuente_Awesome;
+}
+
+.f {
+  font-family: v.$fuente_Lora;
+}

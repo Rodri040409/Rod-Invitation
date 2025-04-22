@@ -47,35 +47,36 @@ export default function Header() {
       <div className=" grid place-items-center relative w-full max-w-[600px] aspect-[300/350] sm:aspect-[800/350] [perspective:1000px] translate-x-[1.5rem]">
         {/* Carta */}
         <motion.div
-          className="absolute left-[1.5%]  w-[89%] sm:w-[580px] min-h-[20rem] sm:min-h-[300px] bg-white text-black p-4 sm:p-6 rounded shadow top-[13rem] sm:top-[30px] z-[300] "
-          animate={abierto ? {
-            y: [-10, -340, 0],
-            zIndex: 500
-          } : { y: 0, zIndex: 300 }}
-          transition={{
-            y: { delay: 0.7, duration: 2, ease: 'easeInOut', times: [0, 0.5, 1] },
-            zIndex: { delay: 1.5 }
-          }}
-        >
-          <h1 className="text-xl sm:text-2xl font-bold text-center">¡Estás invitado a mi cumpleaños! 🎉</h1>
-          <p className="text-sm sm:text-base text-center leading-relaxed">
+        className="absolute left-[1.5%] w-[89%] sm:w-[580px] h-[20rem] sm:h-[300px] bg-white text-black p-4 sm:p-6 rounded top-[13rem] sm:top-[30px] z-[300] overflow-y-auto scroll-smooth shadow-inner"
+        animate={abierto ? {
+          y: [-10, -340, 0],
+          zIndex: 500
+        } : { y: 0, zIndex: 300 }}
+        transition={{
+          y: { delay: 0.7, duration: 2, ease: 'easeInOut', times: [0, 0.5, 1] },
+          zIndex: { delay: 1.5 }
+        }}
+      >
+
+          <h1 className="text-[3rem] font-bold text-center leading-none mb-[2rem] fuente_italica mt-[1rem] sm:mt-[2rem]">¡Estás invitado a mi cumpleaños! 🎉</h1>
+          <p className="text-[1.5rem] text-center leading-tight mb-[1rem] fuente_awesome">
             Te espero este <strong>jueves 24 de abril</strong> a las <strong>11:30 AM</strong> para celebrar juntos con una taquiza deliciosa. 🌮
           </p>
-          <p className="text-sm sm:text-base text-center leading-relaxed">
+          <p className="text-[1.5rem] text-center leading-tight fuente_awesome">
             ¡Habrá <strong>alberca</strong>, por si gustas traer traje de baño! 🏊‍♂️
           </p>
-          <p className="text-sm sm:text-base text-center leading-relaxed">
+          <p className="text-[1.5rem] text-center leading-relaxed fuente_awesome">
             La fiesta será en el salón hazmín, con comida rica, música y buena compañía.
           </p>
-          <p className="text-sm sm:text-base text-center leading-relaxed font-medium">
-            Cuenta regresiva: <span className="text-[#081D3D] font-bold">{tiempoRestante}</span>
+          <p className="text-[2rem] text-center leading-relaxed font-medium fuente_italica">
+            Cuenta regresiva: <span className="text-[#081D3D] font-bold f">{tiempoRestante}</span>
           </p>
           <div className="flex justify-center">
             <a
               href="https://www.google.com.mx/maps/place/19%C2%B027'25.6%22N+96%C2%B057'13.2%22W/@19.45711,-96.95367,16z/data=!4m4!3m3!8m2!3d19.4571111!4d-96.9536667?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" // Reemplazar con enlace correcto
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 px-5 py-2 bg-[#081D3D] text-white rounded-lg border border-[#081D3D] hover:bg-white hover:text-[#081D3D] transition text-sm sm:text-base"
+              className="mt-2 px-5 py-2 bg-[#081D3D] text-white rounded-lg border border-[#081D3D] hover:bg-white hover:text-[#081D3D] transition text-[2rem]"
             >
               Ver ubicación
             </a>
